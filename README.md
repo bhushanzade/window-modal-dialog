@@ -1,7 +1,3 @@
-# window-modal-dialog
-
-Window modal dialog is represent modal popup.
-
 <p align="center">
   <img height="200px" width="200px" style="text-align: center;" src="https://angular.io/assets/images/logos/angular/angular.svg">
   <h1 align="center">Window Modal Dialog</h1>
@@ -11,7 +7,7 @@ Window modal dialog is represent modal popup.
 [![npm](https://img.shields.io/npm/v/window-modal-dialog.svg)]()
 [![npm](https://img.shields.io/npm/dm/window-modal-dialog.svg)]()
 [![npm](https://img.shields.io/npm/dt/window-modal-dialog.svg)]()
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)]()
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Support](https://img.shields.io/badge/Support-Angular%2014%2B-blue.svg?style=flat-square)]()
 
 <!-- [![Support](https://img.shields.io/badge/Support-Angular%206%2B-blue.svg?style=flat-square)]()
@@ -85,7 +81,11 @@ In your app.component.html, simply add modal open button:
 
 ```html
 <div style="padding: 20%; display: flex; justify-content: center;">
-  <button style="width: 200px; height: 40px; background: gray;" (click)="open()">Open Modal Popup</button>
+  <button
+    style="width: 200px; height: 40px; background: gray;"
+    (click)="open()">
+    Open Modal Popup
+  </button>
 </div>
 ```
 
