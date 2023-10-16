@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { WindowModalDialog } from 'projects/window-modal-dialog/src/public-api';
 import { SampleModalComponent } from './modal.component';
+import { WindowModalDialog } from 'window-modal-dialog';
 
 @Component({
   selector: 'app-root',

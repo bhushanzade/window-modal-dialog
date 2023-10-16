@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
 import { IWindowModalDialogOptions, WindowModalDialogOptions } from './window-modal-dialog';
 
 @Component({
@@ -41,7 +41,7 @@ import { IWindowModalDialogOptions, WindowModalDialogOptions } from './window-mo
         width: 500px;
         max-width: 500px;
         height: auto;
-        min-height: 250px;
+        min-height: 150px;
         max-height: 90vh;
         border: olive 1px solid;
         background-color: white;
@@ -59,8 +59,7 @@ import { IWindowModalDialogOptions, WindowModalDialogOptions } from './window-mo
         padding: 10px 20px;
       }
 
-      ::ng-deep {
-        .window-scrolled-block{
+      .window-scrolled-block{
           overflow: hidden;
         }
 
@@ -102,7 +101,6 @@ import { IWindowModalDialogOptions, WindowModalDialogOptions } from './window-mo
             max-height: 50vh;
           }
         }
-      }
 
       .window-modal-close {
         cursor: pointer;
@@ -110,7 +108,8 @@ import { IWindowModalDialogOptions, WindowModalDialogOptions } from './window-mo
 
       
     `
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class WindowModalDialogComponent {
 

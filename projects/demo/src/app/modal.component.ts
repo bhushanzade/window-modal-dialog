@@ -1,6 +1,6 @@
 import { Component, Inject, Optional } from '@angular/core';
-import { WINDOW_DIALOG_DATA, WindowModalDialog } from 'projects/window-modal-dialog/src/public-api';
 import { SampleModalTwoComponent } from './second-modal.component';
+import { WINDOW_DIALOG_DATA, WindowModalDialog } from 'window-modal-dialog';
 
 @Component({
   selector: 'app-sample-modal',

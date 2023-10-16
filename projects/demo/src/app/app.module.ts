@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { WindowModalDialogModule } from 'projects/window-modal-dialog/src/public-api';
 import { SampleModalComponent } from './modal.component';
 import { SampleModalTwoComponent } from './second-modal.component';
+import { WindowModalDialogModule } from 'window-modal-dialog';
 
 @NgModule({
   declarations: [
