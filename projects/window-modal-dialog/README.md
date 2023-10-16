@@ -7,7 +7,7 @@
 [![npm](https://img.shields.io/npm/v/window-modal-dialog.svg)]()
 [![npm](https://img.shields.io/npm/dm/window-modal-dialog.svg)]()
 [![npm](https://img.shields.io/npm/dt/window-modal-dialog.svg)]()
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)]()
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Support](https://img.shields.io/badge/Support-Angular%2014%2B-blue.svg?style=flat-square)]()
 
 <!-- [![Support](https://img.shields.io/badge/Support-Angular%206%2B-blue.svg?style=flat-square)]()
