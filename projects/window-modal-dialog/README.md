@@ -4,9 +4,9 @@
 </p>
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](https://procodeprogramming.com/profile/bhushanzade)
-[![npm](https://img.shields.io/npm/v/ngx-http-loader.svg)]()
-[![npm](https://img.shields.io/npm/dm/ngx-http-loader.svg)]()
-[![npm](https://img.shields.io/npm/dt/ngx-http-loader.svg)]()
+[![npm](https://img.shields.io/npm/v/window-modal-dialog.svg)]()
+[![npm](https://img.shields.io/npm/dm/window-modal-dialog.svg)]()
+[![npm](https://img.shields.io/npm/dt/window-modal-dialog.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)]()
 [![Support](https://img.shields.io/badge/Support-Angular%2014%2B-blue.svg?style=flat-square)]()
 
