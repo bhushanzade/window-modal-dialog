@@ -53,6 +53,7 @@ npm install --save window-modal-dialog
 - Customization with css
 - Pure css responsive
 - Default header
+- Light weight library
 
 # Usage
 
