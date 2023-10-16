@@ -5,9 +5,17 @@ import { SampleModalTwoComponent } from './modal.component copy';
 @Component({
   selector: 'app-sample-modal',
   template: `
-    <div>This is our custom modal content</div>
-    <div> {{ data | json}} </div>
-    <button (click)="open()">Open</button>
+    <div class="window-modal-body">
+      <div>This is our custom modal content</div>
+        <div> 
+        <pre> {{ data | json}} {{ data | json}} {{ data | json}} {{ data | json}} {{ data | json}}
+          {{ data | json}} {{ data | json}} {{ data | json}} {{ data | json}} {{ data | json}}
+          {{ data | json}} {{ data | json}} {{ data | json}} {{ data | json}} {{ data | json}} {{ data | json}}  </pre>
+       </div>
+    </div>
+    <div class="window-modal-footer">
+      <button (click)="open()">Open</button>
+    </div>
   `
 })
 export class SampleModalComponent {

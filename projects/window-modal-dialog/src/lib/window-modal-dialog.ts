@@ -1,17 +1,23 @@
 import { StaticProvider } from "@angular/core";
 
 export interface IWindowModalDialogOptions {
-  size?: string;
+  defaultHeader?: boolean;
+  width?: string;
+  minWidth?: string;
+  height?: string;
+  minHeight?: string;
   title?: string;
   disableClose?: boolean;
   data?: any;
-  providers?: StaticProvider[]
 }
 
 export class WindowModalDialogOptions implements IWindowModalDialogOptions {
-  size?: string = '';
-  title?: string = '';
+  title?: string = 'Modal title';
   disableClose?: boolean = false;
   data?: any = null;
-  providers?: StaticProvider[] = [];
+  width?: string = '100%';
+  minWidth?: string = '400px';
+  height?: string = '100%';
+  minHeight?: string = '800px';
+  defaultHeader: boolean = true;
 }
