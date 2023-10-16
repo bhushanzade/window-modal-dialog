@@ -117,20 +117,18 @@ export class WindowModalDialogComponent {
   config: IWindowModalDialogOptions;
 
   @Output() closeEvent = new EventEmitter();
-  @Output() submitEvent = new EventEmitter();
 
   constructor(private elementRef: ElementRef) {
     this.config = new WindowModalDialogOptions();
   }
 
-  close(isDisable?: boolean): void {
-    if (isDisable === true) return;
+  closeModal() {
     this.elementRef.nativeElement.remove();
-    this.closeEvent.emit();
   }
 
-  submit(): void {
-    this.elementRef.nativeElement.remove();
-    this.submitEvent.emit();
+  close(isDisable?: boolean): void {
+    if (isDisable === true) return;
+    this.closeModal();
+    this.closeEvent.emit();
   }
 }

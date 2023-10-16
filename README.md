@@ -107,7 +107,7 @@ export class AppComponent {
         lname: "Zade",
       },
     });
-    x.subscribe((res) => {
+    x.afterClose?.subscribe((res) => {
       console.log(res);
     });
   }
@@ -118,7 +118,7 @@ Sample Custom Modal Component & HTML
 
 ```
 import { Component, Inject, Optional } from '@angular/core';
-import { WINDOW_DIALOG_DATA } from 'projects/window-modal-dialog/src/public-api';
+import { WINDOW_DIALOG_DATA } from 'window-modal-dialog';
 
 @Component({
   selector: 'app-sample-modal',
@@ -130,7 +130,7 @@ import { WINDOW_DIALOG_DATA } from 'projects/window-modal-dialog/src/public-api'
       </div>
     </div>
     <div class="window-modal-footer">
-      <button>Save</button>
+      <button (click)="save()">Save</button>
     </div>
   `
 })
@@ -139,6 +139,10 @@ export class SampleModalComponent {
   constructor(
     @Optional() @Inject(WINDOW_DIALOG_DATA) public data: any
   ) { }
+
+  save(): void {
+    this.modal.close("1st modal emmited value");
+  }
 }
 
 ```
@@ -153,6 +157,7 @@ export class SampleModalComponent {
 - **[minWidth]**: To set minimum width of modal window. Default is 400px.
 - **[height]**: To set height of modal window. Default is 100%.
 - **[minHeight]**: To set minimum height of modal window. Default is 800px.
+- **[afterClose]**: To received value from closing modal component by subscribing afterClose observable.
 
 # Dependencies
 

@@ -19,13 +19,12 @@ export class AppComponent {
       title: "Open Dialog Modal",
       disableClose: true,
       data: {
-        name: "aSDASDASD",
-        lname: "sdasdasdasd"
+        name: "Bhushan",
+        lname: "Zade"
       },
     });
-    x.subscribe(res => {
+    x.afterClose?.subscribe(res => {
       console.log(res);
-
     })
   }
 }

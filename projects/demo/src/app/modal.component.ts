@@ -1,5 +1,6 @@
 import { Component, Inject, Optional } from '@angular/core';
-import { WINDOW_DIALOG_DATA } from 'projects/window-modal-dialog/src/public-api';
+import { WINDOW_DIALOG_DATA, WindowModalDialog } from 'projects/window-modal-dialog/src/public-api';
+import { SampleModalTwoComponent } from './second-modal.component';
 
 @Component({
   selector: 'app-sample-modal',
@@ -11,13 +12,34 @@ import { WINDOW_DIALOG_DATA } from 'projects/window-modal-dialog/src/public-api'
       </div>
     </div>
     <div class="window-modal-footer">
-      <button>Save</button>
+      <button (click)="open()">Open</button>
+      <button (click)="save()">Save</button>
     </div>
   `
 })
 export class SampleModalComponent {
 
   constructor(
+    private modal: WindowModalDialog,
     @Optional() @Inject(WINDOW_DIALOG_DATA) public data: any
   ) { }
+
+  open() {
+    const x = this.modal.open(SampleModalTwoComponent, {
+      title: "Open Dialog Modal",
+      disableClose: true,
+      data: {
+        name: "Bhushan",
+        lname: "Zade"
+      },
+    });
+    x.afterClose?.subscribe(res => {
+      console.log("2nd modal res", res);
+
+    })
+  }
+
+  save(): void {
+    this.modal.close("1st modal emmited value");
+  }
 }
