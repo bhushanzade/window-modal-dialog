@@ -1,27 +1,168 @@
-# NgxWindowModal
+<p align="center">
+  <img height="200px" width="200px" style="text-align: center;" src="https://angular.io/assets/images/logos/angular/angular.svg">
+  <h1 align="center">Window Modal Dialog</h1>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](https://procodeprogramming.com/profile/bhushanzade)
+[![npm](https://img.shields.io/npm/v/ngx-http-loader.svg)]()
+[![npm](https://img.shields.io/npm/dm/ngx-http-loader.svg)]()
+[![npm](https://img.shields.io/npm/dt/ngx-http-loader.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)]()
+[![Support](https://img.shields.io/badge/Support-Angular%2014%2B-blue.svg?style=flat-square)]()
 
-## Development server
+<!-- [![Support](https://img.shields.io/badge/Support-Angular%206%2B-blue.svg?style=flat-square)]()
+[![Support](https://img.shields.io/badge/Support-Angular%207%2B-blue.svg?style=flat-square)]()
+[![Support](https://img.shields.io/badge/Support-Angular%208%2B-blue.svg?style=flat-square)]()
+[![Support](https://img.shields.io/badge/Support-Angular%209%2B-blue.svg?style=flat-square)]()
+[![Support](https://img.shields.io/badge/Support-Angular%2010%2B-blue.svg?style=flat-square)]()
+[![Support](https://img.shields.io/badge/Support-Angular%2011%2B-blue.svg?style=flat-square)]()
+[![Support](https://img.shields.io/badge/Support-Angular%2012%2B-blue.svg?style=flat-square)]() -->
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# What is use?
 
-## Code scaffolding
+`window-modal-dialog` Modal popup for Angular 14+ pure css bootstrap modal. Easy to integrate & easy to use. Looks similar like bootstrap modal but different is to maintain the code redability by making different components for modal popups.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<!-- ## Supports
 
-## Build
+| Angular Version | Package Version |
+| :-------------- | :-------------- |
+| Angular 7       | Version 7       |
+| Angular 8       | Version 8       |
+| Angular 9       | Version 9       |
+| Angular 10      | Version 10      |
+| Angular 11      | Version 11      |
+| Angular 12      | Version 12      |
+| Angular 13      | Version 13      |
+| Angular 14      | Version 14      |
+| Angular 15      | Version 15      |
+| Angular 16      | Version 16      | -->
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Installation
 
-## Running unit tests
+```
+npm install --save window-modal-dialog
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<!-- # [Demo live site](https://bhushanzade.github.io/ngx-http-loader/) -->
 
-## Running end-to-end tests
+# Features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Seperated with many components
+- Increase code readability
+- Parent to child modal communication
+- Customization with css
+- Pure css responsive
+- Default header
 
-## Further help
+# Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+From your Angular `AppModule`:
+
+```typescript
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { AppComponent } from "./app.component";
+import { WindowModalDialogModule } from "window-modal-dialog";
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    WindowModalDialogModule.forRoot(), // <============ Don't forget to call 'forRoot()'!
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+In your app.component.html, simply add modal open button:
+
+```html
+<div style="padding: 20%; display: flex; justify-content: center;">
+  <button style="width: 200px; height: 40px; background: gray;" (click)="open()">Open Modal Popup</button>
+</div>
+```
+
+In your app.component.ts
+
+```typescript
+import { Component } from "@angular/core";
+import { WindowModalDialogService } from "window-modal-dialog";
+import { SampleModalComponent } from "./modal.component";
+
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+})
+export class AppComponent {
+  constructor(private modal: WindowModalDialogService) {}
+
+  open() {
+    const x = this.modal.open(SampleModalComponent, {
+      title: "Open Dialog Modal",
+      disableClose: true,
+      data: {
+        name: "Bhushan",
+        lname: "Zade",
+      },
+    });
+    x.subscribe((res) => {
+      console.log(res);
+    });
+  }
+}
+```
+
+Sample Custom Modal Component & HTML
+
+```
+import { Component, Inject, Optional } from '@angular/core';
+import { WINDOW_DIALOG_DATA } from 'projects/window-modal-dialog/src/public-api';
+
+@Component({
+  selector: 'app-sample-modal',
+  template: `
+    <div class="window-modal-body">
+      <div>This is your custom modal content</div>
+      <div>
+          <pre> {{ data | json}}</pre>
+      </div>
+    </div>
+    <div class="window-modal-footer">
+      <button>Save</button>
+    </div>
+  `
+})
+export class SampleModalComponent {
+
+  constructor(
+    @Optional() @Inject(WINDOW_DIALOG_DATA) public data: any
+  ) { }
+}
+
+```
+
+# Available Options
+
+- **[defaultHeader]**: To set default header or not. By default its true and need to pass title in default header.
+- **[title]**: To show title in modal popup. Default is `Modal Title` string format.
+- **[disableClose]**: If you want to prevent clicks outside of modal window then set disableClose as true else false to close modal by click outside. Default is false.
+- **[data]**: To pass dynamic data to the modal component. By Default its null data.
+- **[width]**: To set width of modal window. Default is 100%.
+- **[minWidth]**: To set minimum width of modal window. Default is 400px.
+- **[height]**: To set height of modal window. Default is 100%.
+- **[minHeight]**: To set minimum height of modal window. Default is 800px.
+
+# Dependencies
+
+- Angular 14+ Support
+
+## Creator
+
+---
+
+#### [Bhushan Zade](https://procodeprogramming.com/profile/bhushanzade)
+
+- [@GitHub](https://github.com/bhushanzade)
+- [@LinkedIn](https://www.linkedin.com/in/bhushanzade)

@@ -1,6 +1,18 @@
 {
   "name": "ngx-window-modal",
   "version": "0.0.0",
+  "author": {
+    "name": "Bhushan Zade",
+    "email": "bhushanzade50@gmail.com",
+    "url": "https://github.com/bhushanzade"
+  },
+  "description": "`window-modal-dialog` Modal popup for Angular 14+ pure css bootstrap modal. Easy to integrate & easy to use. Looks similar like bootstrap modal but different is to maintain the code redability by making different components for modal popups.",
+  "homepage": "https://github.com/bhushanzade/window-modal-dialog",
+  "bugs": {
+    "url": "https://github.com/bhushanzade/window-modal-dialog/issues",
+    "email": "bhushanzade50@gmail.com"
+  },
+  "license": "Apache License",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,6 +21,15 @@
     "test": "ng test"
   },
   "private": true,
+  "keywords": [
+    "angular",
+    "window popup",
+    "ngx bootstrap modal",
+    "bootstrap",
+    "modal dialog",
+    "dialog",
+    "angular modal"
+  ],
   "dependencies": {
     "@angular/animations": "^16.0.0",
     "@angular/common": "^16.0.0",

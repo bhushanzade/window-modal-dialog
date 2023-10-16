@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { WindowModalDialogComponent } from './window-modal-dialog.component';
-import { WINDOW_DIALOG_DATA, WindowModalDialogService } from './window-modal-dialog.service';
 import { CommonModule } from '@angular/common';
+import { WindowModalDialog } from './window-modal-dialog';
 
 const component = [WindowModalDialogComponent]
 
@@ -14,14 +14,14 @@ const component = [WindowModalDialogComponent]
   ],
   imports: [CommonModule],
   providers: [
-    WindowModalDialogService,
+    WindowModalDialog,
   ]
 })
 export class WindowModalDialogModule {
   public static forRoot(): ModuleWithProviders<WindowModalDialogModule> {
     return {
       ngModule: WindowModalDialogModule,
-      providers: [WindowModalDialogService]
+      providers: [WindowModalDialog]
     };
   }
 }

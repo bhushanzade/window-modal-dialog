@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WindowModalDialogService } from 'projects/window-modal-dialog/src/public-api';
+import { WindowModalDialog } from 'projects/window-modal-dialog/src/public-api';
 import { SampleModalComponent } from './modal.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { SampleModalComponent } from './modal.component';
 export class AppComponent {
   title = 'demo';
 
-  constructor(private modal: WindowModalDialogService) {
+  constructor(private modal: WindowModalDialog) {
 
   }
 
